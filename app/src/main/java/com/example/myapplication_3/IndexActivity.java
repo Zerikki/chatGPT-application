@@ -6,20 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ScrollView;
-import android.widget.Scroller;
 import android.widget.TextView;
 
-import java.net.URI;
-import java.net.URISyntaxException;
-
-public class Activity_2 extends AppCompatActivity {
+public class IndexActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_2);
+        setContentView(R.layout.activity_index);
         Button bStart = findViewById(R.id.start_button);
         TextView test = findViewById(R.id.test);
 
@@ -30,8 +24,8 @@ public class Activity_2 extends AppCompatActivity {
         bStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // nous voulons passer a de l'activité 2 au Chat
-                Intent intent = new Intent(getApplicationContext(), chat_activity.class);
+                // nous voulons passer de IndexActivity a ImageActivity
+                Intent intent = new Intent(getApplicationContext(), ImageActivity.class);
                 startActivity(intent);
             }
         });
