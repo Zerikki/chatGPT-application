@@ -6,39 +6,47 @@
     android:layout_height="match_parent"
     tools:context=".Activity_2">
 
-    <RelativeLayout
+
+    <ImageView
+        android:id="@+id/hero_banner_image_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#FFFFFF"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="68dp">
+        android:layout_height="400dp"
+        android:contentDescription="hero banner"
+        android:scaleType="centerCrop"
+        android:src="@drawable/hero_banner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.018" />
 
-        <ImageView
-            android:id="@+id/hero_banner_image_view"
-            android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:contentDescription="hero banner"
-            android:scaleType="centerCrop"
-            android:layout_marginTop="90px"
-            android:src="@drawable/hero_banner" />
+    <Button
+        android:id="@+id/start_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hero_banner_image_view"
+        android:layout_centerHorizontal="true"
+        android:text="Commencer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hero_banner_image_view"
+        app:layout_constraintVertical_bias="0.578" />
 
-        <Button
-            android:id="@+id/start_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/hero_banner_image_view"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="156dp"
-            android:text="Commencer" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/chat_recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/start_button"
-            android:layout_marginTop="115dp" />
-
-
-    </RelativeLayout>
+    <TextView
+        android:id="@+id/test"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:text="ceci est un test"
+        android:textColor="#CD0505"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hero_banner_image_view"
+        app:layout_constraintVertical_bias="0.27" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

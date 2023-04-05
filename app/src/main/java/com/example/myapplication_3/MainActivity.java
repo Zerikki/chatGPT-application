@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // nous voulons passer a l'activité activity_2
-                Intent intent = new Intent(getApplicationContext(), Activity_2.class);
+                Intent intent = new Intent(MainActivity.this, Activity_2.class);
+                intent.putExtra(EXTRA_MESSAGE, "Sa passe"); //Optional parameters
                 startActivity(intent);
             }
         });
