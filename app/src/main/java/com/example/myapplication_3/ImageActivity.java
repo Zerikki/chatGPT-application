@@ -1,6 +1,9 @@
 package com.example.myapplication_3;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import com.squareup.picasso.Picasso;
 
@@ -16,17 +19,29 @@ import okhttp3.*;
 public class ImageActivity extends AppCompatActivity  {
     private static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
     private static final String API_URL = "https://api.openai.com/v1/images/generations";
-    private static final String API_KEY = "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";
+    private static final String API_KEY = "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";
+
+    public EditText promptEditText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image);
-        generateImages();
+
+        promptEditText = findViewById(R.id.textInputEditText);
+
+        Button generateBouton = findViewById(R.id.button);
+        generateBouton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                generateImages();
+            }
+        });
     }
+
     public void generateImages() {
         OkHttpClient client = new OkHttpClient();
 
-        String prompt = "Une otarie";
+        String prompt = promptEditText.getText().toString();;
         int n = 1;
         String size = "1024x1024";
 
