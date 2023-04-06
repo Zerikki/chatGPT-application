@@ -5,6 +5,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -14,12 +20,21 @@ import org.json.JSONObject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.IOException;
+import java.util.ResourceBundle;
+
 import okhttp3.*;
 
+
 public class ImageActivity extends AppCompatActivity  {
+
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    DocumentReference apiKey = db.document("APIKEY");
+
+
+
     private static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
     private static final String API_URL = "https://api.openai.com/v1/images/generations";
-    private static final String API_KEY = "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";
+    private final String API_KEY = String.valueOf(apiKey);
 
     public EditText promptEditText;
     @Override
